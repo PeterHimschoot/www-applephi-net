@@ -5,15 +5,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="/" />
-  <link rel="stylesheet" href="app.css" />
-  <link rel="stylesheet" href="ApplePhi.styles.css" />
+  <link rel="stylesheet" href="@Assets["app.css"]" />
+  <link rel="stylesheet" href="@Assets["ApplePhi.styles.css"]" />
+  <ImportMap />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <HeadOutlet />
+  <HeadOutlet @rendermode="renderMode" />
 </head>
 
 <body>
-  <Routes />
+  <div id="preload">
+    <svg class="loading-progress">
+      <circle r="40%" cx="50%" cy="50%" />
+      <circle r="40%" cx="50%" cy="50%" />
+    </svg>
+    <div class="loading-progress-text"></div>
+  </div>
+  <FluentDesignTheme StorageName="theme" />
+  <Routes @rendermode="renderMode" />
   <script src="_framework/blazor.web.js"></script>
+  <!-- Set the default theme -->
+  <script src="_content/Microsoft.FluentUI.AspNetCore.Components/js/loading-theme.js" type="text/javascript"></script>
+  <loading-theme storage-name="theme"></loading-theme>
 </body>
 
 </html>
+
+@code {
+  IComponentRenderMode renderMode = new InteractiveWebAssemblyRenderMode(prerender: false);
+}

@@ -1,0 +1,20 @@
+﻿img.peter {
+  border-radius: 25px;
+  border-color: var(--neutral-foreground-rest);
+  border-width: thin;
+  border-style: solid;
+  width: 200px;
+  height: 190px;
+}
+
+img.apress {
+  border-radius: 25px;
+  border-color: var(--neutral-foreground-rest);
+  border-width: thin;
+  border-style: solid;
+  width: 158px;
+  height: 238px;
+}
+ a {
+   display:inline;
+ }

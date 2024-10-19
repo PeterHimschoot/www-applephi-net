@@ -1,0 +1,36 @@
+﻿@page "/demos"
+
+<FluentLabel Typo="Typography.H1"> Demos </FluentLabel>
+
+<FluentGrid Spacing="2" AdaptiveRendering="true" Justify="JustifyContent.FlexStart" >
+  <FluentGridItem xs="12" sm="6">
+    <FluentCard >
+      <FluentLabel Typo="Typography.H1"> Leaflet Maps </FluentLabel>
+      <p>Work with maps.</p>
+      <FluentButton Appearance="Appearance.Accent" OnClick="ShowLeafletMaps">Maps</FluentButton>
+    </FluentCard>
+  </FluentGridItem>
+  <FluentGridItem xs="12" sm="6">
+    <FluentCard>
+      <p>Just some content in a card (with a button that does not do anything).</p>
+      <FluentButton Appearance="Appearance.Accent">Hello</FluentButton>
+    </FluentCard>
+  </FluentGridItem>
+  <FluentGridItem xs="12" sm="6">
+    <FluentCard>
+      <p>Just some content in a card (with a button that does not do anything).</p>
+      <FluentButton Appearance="Appearance.Accent">Hello</FluentButton>
+    </FluentCard>
+  </FluentGridItem>
+</FluentGrid>
+
+@code {
+
+  [Inject]
+  public required NavigationManager NavigationManager { get; set; }
+
+  public void ShowLeafletMaps()
+  {
+    NavigationManager.NavigateTo("/demos/leaflet-maps");
+  }
+}

@@ -1,0 +1,18 @@
+﻿@page "/demos/leaflet-maps"
+
+<FluentLabel Typo="Typography.H1"> Maps </FluentLabel>
+
+
+<RealTimeMap height="460px" width="620px" Parameters="parameters"></RealTimeMap>
+
+@code {
+  RealTimeMap.LoadParameters parameters = new RealTimeMap.LoadParameters()  //general map settings
+    {
+      location = new RealTimeMap.Location()
+      {
+        latitude = 44.4501715,
+        longitude = 26.1107672,
+      },
+      zoomLevel = 18
+    };
+}
